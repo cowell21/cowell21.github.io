@@ -1,0 +1,72 @@
+<html>
+<head>
+  <style>
+  html { overflow: hidden; }
+  body { background-color:grey; }
+  @font-face
+  {
+    font-family: bitfont;
+    src: url(PressStart2P.ttf);
+  }
+  div
+  {
+    text-shadow:2px 2px red;
+    font-family:bitfont;
+    color:white;
+    text-align: center
+  }
+  canvas { border:3px solid #FFF; }
+  p { font-size:75%; }
+  </style>
+
+  <title>Asteroids</title>
+
+  <script src="moving_object.js"></script>
+  <script src="asteroid.js"></script>
+  <script src="game.js"></script>
+  <script src="ship.js"></script>
+  <script src="bullet.js"></script>
+  <script src="star.js"></script>
+  <script src="keymaster.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">
+  </script>
+</head>
+
+<body>
+
+  <div>
+    <h2>Asteroids</h2>
+    <p>by Chris Cowell</p>
+    <canvas width="1000" height="600"></canvas>
+  </div>
+
+  <img id="ship" src="media/ship.png" hidden>
+  <img id="boost" src="media/boost.png" hidden>
+  <img id="home" src="media/sprite.png" hidden><!-- needs relabeled -->
+  <img id="explosion" src="media/explosion2.png" hidden>
+
+  <audio src="media/bgmusic32.mp3" autoplay loop class="bgmusic"></audio>
+
+  <audio class="boostnoise">
+    <source src='media/boost.mp3' type='audio/mpeg'>
+  </audio>
+
+  <audio class="shootnoise">
+    <source src='media/shot.mp3' type='audio/mpeg'>
+  </audio>
+
+  <audio class="boomnoise">
+    <source src='media/boom.mp3' type='audio/mpeg'>
+  </audio>
+
+  <audio class="gameovernoise">
+    <source src='media/gameover.mp3' type='audio/mpeg'>
+  </audio>
+</body>
+
+<script>
+  var canvas = document.getElementsByTagName("canvas")[0];
+  var game = new App.Game(canvas.getContext("2d"));
+  game.start();
+</script>
+</html>
