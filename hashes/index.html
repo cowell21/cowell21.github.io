@@ -1,0 +1,23 @@
+<!doctype html>
+<html ng-app="hashApp">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+    <script src="hash.js"></script>
+  </head>
+  <body>
+    <div ng-controller="HashController as hashStuff" ng-init="hashStuff.calc('')">
+      <label>Text To Be Hash:</label>
+      <input style="width: 400px" type="text" ng-model="inputText" ng-change="hashStuff.calc(inputText)" placeholder="Enter Text Here to be Hashes">
+      <hr>
+      <h3>Current Text: {{ '"' + inputText + '"' }} </h3>
+      <h3>SHA-1 Hash(hex): {{ hashStuff.sha1 }} </h3>
+      <h3>SHA-1 Hash(base64): {{ hashStuff.sha1base64 }} </h3>
+      <h3>SHA-256 Hash(hex): {{ hashStuff.sha256 }} </h3>
+      <h3>SHA-256 Hash(base64): {{ hashStuff.sha256base64 }} </h3>
+      <h3>SHA-384 Hash(hex): {{ hashStuff.sha384 }} </h3>
+      <h3>SHA-384 Hash(base64): {{ hashStuff.sha384base64 }} </h3>
+      <h3>SHA-512 Hash(hex): {{ hashStuff.sha512 }} </h3>
+      <h3>SHA-512 Hash(base64): {{ hashStuff.sha512base64 }} </h3>
+    </div>
+  </body>
+</html>
