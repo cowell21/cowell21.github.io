@@ -2,6 +2,14 @@
 <html ng-app="hashApp">
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+    <script>
+      // Webcrypto APIs require a secure connection to work
+      // Redirects to https if http protocol is detected
+      if (window.location.protocol == 'http:')
+        window.location.assign('https://' + window.location.hostname + window.location.pathname);
+
+      var app = angular.module('hashApp', []);
+    </script>
     <script src="hash.js"></script>
   </head>
   <body>
