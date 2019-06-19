@@ -1,72 +1,61 @@
-<html>
-<head>
-  <style>
-  html { overflow: hidden; }
-  body { background-color:grey; }
-  @font-face
-  {
-    font-family: bitfont;
-    src: url(PressStart2P.ttf);
-  }
-  div
-  {
-    text-shadow:2px 2px red;
-    font-family:bitfont;
-    color:white;
-    text-align: center
-  }
-  canvas { border:3px solid #FFF; }
-  p { font-size:75%; }
-  </style>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-  <title>Asteroids</title>
+    <title>Starter Template for Bootstrap</title>
 
-  <script src="moving_object.js"></script>
-  <script src="asteroid.js"></script>
-  <script src="game.js"></script>
-  <script src="ship.js"></script>
-  <script src="bullet.js"></script>
-  <script src="star.js"></script>
-  <script src="keymaster.js"></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">
-  </script>
-</head>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-<body>
+    <!-- Custom styles for this template -->
+    <style>
+      body {
+        padding-top: 5rem;
+      }
+      .starter-template {
+        padding: 3rem 1.5rem;
+        text-align: center;
+      }
+    </style>
+  </head>
 
-  <div>
-    <h2>Asteroids</h2>
-    <p>by Chris Cowell</p>
-    <canvas width="1000" height="600"></canvas>
-  </div>
+  <body>
 
-  <img id="ship" src="media/ship.png" hidden>
-  <img id="boost" src="media/boost.png" hidden>
-  <img id="home" src="media/sprite.png" hidden><!-- needs relabeled -->
-  <img id="explosion" src="media/explosion2.png" hidden>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <a class="navbar-brand" href="#">Chris Cowell</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-  <audio src="media/bgmusic32.mp3" autoplay loop class="bgmusic"></audio>
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://docs.google.com/document/d/1qLp2jbAVh_WT81HQRp23qliZOUHaq9UEsLqicsjxx50/edit?usp=sharing">Resume</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/cowell21">Projects</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <main role="main" class="container">
 
-  <audio class="boostnoise">
-    <source src='media/boost.mp3' type='audio/mpeg'>
-  </audio>
+      <div class="starter-template">
+        <h1>Chris Cowell</h1>
+        <img style="border-radius: 25px; width: 480px" src="chrisplane.jpeg">
+        <h1>Senior Software Engineer</h1>
+        <p class="lead">JavaScript, Scala, MongoDB, Play, Ruby, HTML, CSS, Git, Linux, NodeJS and Stuff!</p>
+      </div>
 
-  <audio class="shootnoise">
-    <source src='media/shot.mp3' type='audio/mpeg'>
-  </audio>
+    </main>
 
-  <audio class="boomnoise">
-    <source src='media/boom.mp3' type='audio/mpeg'>
-  </audio>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-  <audio class="gameovernoise">
-    <source src='media/gameover.mp3' type='audio/mpeg'>
-  </audio>
-</body>
-
-<script>
-  var canvas = document.getElementsByTagName("canvas")[0];
-  var game = new App.Game(canvas.getContext("2d"));
-  game.start();
-</script>
-</html>
+</body></html>
