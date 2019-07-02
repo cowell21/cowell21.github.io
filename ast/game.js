@@ -159,17 +159,17 @@
           this.bullets[j].pos = [-100,-100]
           this.asteroids[i].rot = 1300;
           this.asteroids.push(App.Asteroid.randomAsteroid(Game.DIM_X, Game.DIM_Y));
-          $('.boomnoise')[0].currentTime = 0;
-          $('.boomnoise')[0].play();
+          document.getElementsByClassName('boomnoise')[0].currentTime = 0;
+          document.getElementsByClassName('boomnoise')[0].play();
         }
       }
 
       if (this.asteroids[i].isCollidedWith(this.ship)) {
-        $('.bgmusic')[0].volume = 0.25;
-        $('.boomnoise')[0].currentTime = 0;
-        $('.boomnoise')[0].play();
-        $('.gameovernoise')[0].currentTime = 0;
-        $('.gameovernoise')[0].play();
+        document.getElementsByClassName('bgmusic')[0].volume = 0.25;
+        document.getElementsByClassName('boomnoise')[0].currentTime = 0;
+        document.getElementsByClassName('boomnoise')[0].play();
+        document.getElementsByClassName('gameovernoise')[0].currentTime = 0;
+        document.getElementsByClassName('gameovernoise')[0].play();
 
         gameover = true;
         this.asteroids = [];
@@ -198,12 +198,12 @@
     this.asteroids = this.addAsteroids(5);
     this.ship.pos = [(Game.DIM_X / 2), (Game.DIM_Y / 2)];
     this.ship.vel = [0,0];
-    $('.bgmusic')[0].volume = 1;
+    document.getElementsByClassName('bgmusic')[0].volume = 1;
   };
 
   Game.prototype.pressedSpace = function () {
-    $('.shootnoise')[0].currentTime = 0;
-    $('.shootnoise')[0].play();
+    document.getElementsByClassName('shootnoise')[0].currentTime = 0;
+    document.getElementsByClassName('shootnoise')[0].play();
 
     this.bullets[inTheHole].pos = [this.ship.pos[0], this.ship.pos[1]];
     this.bullets[inTheHole].vel = [4 * Math.sin(rot) + this.ship.vel[0],
@@ -216,8 +216,8 @@
   Game.prototype.pressedUp = function () {
     this.ship.power();
     Game.SORRY = true; //needs to be changed
-    $('.boostnoise')[0].currentTime = 0;
-    $('.boostnoise')[0].play();
+    document.getElementsByClassName('boostnoise')[0].currentTime = 0;
+    document.getElementsByClassName('boostnoise')[0].play();
   };
 
 })(this)
